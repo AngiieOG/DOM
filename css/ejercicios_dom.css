@@ -1,0 +1,344 @@
+/*RESET CSS*/
+:root{
+    --main-font: sans-serif;
+    --font-size:16px;
+    --main-color: #f7df1e;
+    --second-color: #222;
+    --main-modal-color:rgba(247,222,30,0.85);
+    --second-modal-color:rgba(34,34,34,0.85);
+    --container-width: 1200px;
+}
+html{
+    box-sizing: border-box;
+    font-family: var(--main-font);
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+}
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+body{
+    margin: 0; /*Para resetear el margen que crea en el body por defecto*/
+    overflow-x: hidden; /*Para que se oculte lo que seldesborde en horizontal y no se genere la barra de desplazamiento*/
+}
+/*Para que las imagenes se adapten a la máxima anchura de su contenedor*/
+img{
+    max-width: 100%;
+    height: auto;
+}
+/*MENÚ DE HAMBURGUESA*/
+header{
+    position: sticky; /*Para fijar el header cuando llegue a 0 y se quede arriba*/
+    top: 0;
+    z-index: 997;
+    padding: 1rem;
+    background-color: var(--main-color);
+    color: var(--second-color);
+}
+header h1{
+    text-align: center;
+    margin: 0 auto; /*Margin 0 arriba y abajo, auto para izq-der*/
+}
+section{
+    padding: 2rem;
+    padding-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: var(--container-width);
+    min-height: 100vh;
+    text-align: center;
+}
+.panel{
+    position: fixed;
+    z-index: 998;
+    width: 100%; /*Se define esta anchura para que tome la anchura maxima posible, de lo contrario se adapataria solo al panel*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    background-color: var(--second-modal-color); 
+    transition: transform 0.3s ease;
+    transform: translate(0, -200%);
+
+}
+.panel.is-active{
+    transform: translate(0,0);
+}
+
+#button{
+    position: fixed; /*Con estas dos propiedades, se logra que el botón vaya abajo y se mantenga siempre abajo respecto al viewport*/
+    bottom: 1vh;
+    background-color: var(--main-color); 
+    z-index: 999;/*Para que el botón esté por encima de todo*/
+    right: 1vw; /*Manda el botón a la derecha*/
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    
+}
+.menu{
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+.menu a {
+    padding: 2rem;
+    width: inherit;
+    display: block;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--main-color);
+    transition: all 0.3 ease;
+}
+
+.menu a:hover{
+    font-weight: bold;
+    color: var(--second-color);
+    background-color: var(--main-modal-color);
+}
+
+/********Eventos del teclado*********/
+.stage{
+    display: flex;
+    min-height: 50vh;
+    background-color: var(--second-color);
+}
+.ball{
+    margin: auto;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: var(--main-color);
+}
+/********* SCROLL TOP BUTTON **********/
+.scroll-top-btn{
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    right: calc(4.25rem + 1vw);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: var(--main-color);
+    color: var(--second-color);
+    outline: none;
+    border: 0;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+.scroll-top-btn:hover{
+    background-color: var(--second-color);
+    color: var(--main-color);
+}
+.hidden{
+    visibility: hidden;
+    opacity: 0;
+}
+.dark-mode{
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;   
+    left: 1vw;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 0;
+    outline: none;
+    font-size: 2.5rem;
+    background-color: #423b4f; 
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.dark-mode.is-active{
+    background-color: whitesmoke;
+    border: medium solid lightcoral;
+}
+/*********** DETECCIÓN DE RED *************/
+#deteccion-red{
+    background-color: green;
+    color: whitesmoke;
+    border-radius: 20px;
+    font-size: larger;
+    padding: 0.5rem;
+}
+#deteccion-red.is-false{
+    background-color: #cc0000;
+    color: whitesmoke;
+    border-radius: 20px;
+    font-size: larger;
+    padding: 0.5rem;
+}
+/********** filtros de búsquedas *********/
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.card{
+    background-color: var(--second-color);
+    color: var(--main-color);
+    transition: all 0.3s ease-out;
+}
+.card img{
+    width: 100%;
+    height: auto;
+}
+.card figcaption{
+    padding: 1rem;
+}
+.filter{
+    /*display: none; */
+    visibility: hidden;
+    opacity: 0;
+    order: 1;
+}
+/******** GALERÍA ********/
+#galeria{
+    position: relative;
+    width: 80%;
+    margin: 1rem auto;
+    text-align: center;
+    border: thin solid #222;
+}
+#galeria-slides{
+    position: relative;
+    height: 400px;
+}
+#galeria-slide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+}
+#galeria-slide img{
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
+    object-position: 50% 0%;
+}
+#galeria-slide.active{
+    opacity: 1;
+    visibility: visible;
+}
+#galeria a{
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: thin solid #222;
+    text-decoration: none;
+    background-color: aliceblue;
+    color: lightsalmon;
+    transition: all 0.3s ease;
+}
+#galeria a:hover{
+    color: lightslategray;
+}
+.galeria-botones{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/********* VALIDACIÓN DE FORMULARIO  *************/
+
+.contact-form{
+    --form-ok-color: #4caf50;
+    --form-error-color: #f44336;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.contact-form > * {
+    padding: 0.5rem;
+    margin: 1rem auto;
+    display: block;
+    width: 100%;
+}
+
+.contact-form textarea{
+    resize: none;
+}
+
+.contact-form legend, 
+.contact-form-response{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.contact-form input, 
+.contact-form textarea{
+    font-size: 1rem;
+    font-family: sans-serif;
+}
+
+.contact-form input[type="submit"]{
+    width: 50%;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-form-response.none, 
+.contact-form-loader{
+    display: none;
+}
+
+.contact-form *::placeholder{
+    color: #000;
+}
+
+.contact-form [required]:valid{
+    border: thin solid var(--form-ok-color);
+}
+
+.contact-form [required]:invalid{
+    border: thin solid var(--form-error-color);
+}
+
+.contact-form-error{
+    margin-top: -1rem;
+    font-size: 80%;
+    background-color: var(--form-error-color);
+    color: antiquewhite;
+    transition: all 800ms ease;
+}
+
+.contact-form-error.is-active{
+    display: block;
+    animation: show-message 1s 1 normal 0s ease-out both;
+}
+@keyframes show-message{
+    0%{
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    100%{
+        visibility: visible;
+        opacity: 1;
+    }
+}

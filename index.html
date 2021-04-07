@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dom-ejercicios/css/ejercicios_dom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css">
+    
+    <title>Ejercicios del DOM</title>
+</head>
+<body>
+    <header>
+        <h1>Menú de hamburguesa</h1>
+    </header>
+    
+    <button id="button" class="panel-btn  hamburger hamburger--arrowalt-r" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <aside id="seccion" class="panel">
+        <nav class="menu">
+            <a href="#seccion1">Reloj digital y alarma sonora</a>
+            <a href="#seccion2">Eventos del teclado</a>
+            <a href="#seccion3">Cuenta Regresiva</a>
+            <a href="#seccion4">Responsive con Javascript</a>
+            <a href="#seccion5">Responsive tester</a>
+            <a href="#seccion6">Detección de dispositivos</a>
+            <a href="#seccion7">Detección de Red</a>
+            <a href="#seccion8">Detección de la cámara web</a>
+            <a href="#seccion9">Geolocalización</a>
+            <a href="#seccion10">Filtros de búsqueda</a>
+            <a href="#seccion11">Sorteo Digital</a>
+            <a href="#seccion12">Galería responsiva</a>
+            <a href="#seccion13">Validadción de Formularios</a>
+            <a href="#seccion14">---</a>
+
+        </nav>
+    </aside>
+    <main>
+        <section id="seccion1" class="section">
+            <h2>Reloj digital y alarma sonora</h2>
+            <div id="reloj"></div>
+            <div>
+                <button id="activar-reloj">Activar reloj</button>
+                <button id="desactivar-reloj">Desactivar reloj</button>
+                <button id="iniciar-alarma">Iniciar alarma</button>
+                <button id="desactivar-alarma">Desactivar alarma</button>
+            </div>
+
+        </section>
+        <section id="seccion2" class="section">
+            <h2>Eventos del teclado</h2>
+            <article class="stage">
+                <div class="ball"></div>
+            </article>
+        </section>
+        <section id="seccion3" class="section">
+            <h2>Cuenta Regresiva</h2>
+            <div id="countdown"></div>
+
+        </section>
+        <section id="seccion4" class="section">
+            <h2>Responsive con Javascript</h2>
+            <div id="youtube"></div>
+            <div id="gmaps"></div>
+            
+        </section>
+        <section id="seccion5" class="section">
+            <h2>Responsive tester</h2>
+            <form id="responsive-tester">
+                <input name="direccion" type="url" placeholder="url" required>
+                <br>
+                <input name="ancho" type="text" placeholder="ancho" required>
+                <br>
+                <input name="alto" type="text" placeholder="alto" required>
+                <br>
+                <input name="probar" type="submit" value="Probar">
+                <input name="cerrar" type="button" value="Cerrar">
+            </form>
+        </section>
+
+        <section id="seccion6" class="section">
+            <h2>Detección de dispositivos</h2>
+            <div id="user-device"></div>
+        </section>
+
+        <section id="seccion7" class="section">
+            <h2>Detección de Red</h2>
+            <div id="deteccion-red"></div>
+        </section>
+        <section id="seccion8" class="section">
+            <h2>Detección de la cámara</h2>
+            <video id="webcam"></video>
+        </section>
+        <section id="seccion9" class="section">
+            <h2>Geolocalización</h2>
+            <div id="geolocalizacion"></div>
+        </section>
+        <section id="seccion10" class="section">
+            <h2>Filtros de búsqueda</h2>
+            <input type="search" placeholder="Buscar..." class="card-filter">
+            <article class="cards">
+                <figure class="card">
+                    <img src="https://placeimg.com/200/200/tech" alt="Tecnología">
+                    <figcaption>Tecnología</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="https://placeimg.com/200/200/nature" alt="Naturaleza">
+                    <figcaption>Naturaleza</figcaption>    
+                </figure>
+                <figure class="card">
+                    <img src="https://placeimg.com/200/200/animals" alt="Animales">
+                    <figcaption>Animales</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="https://placeimg.com/200/200/people" alt="gente">
+                    <figcaption>Gente</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="https://placeimg.com/200/200/arch" alt="arquitectura">
+                    <figcaption>Arquitectura</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="https://placeimg.com/200/200/any" alt="any">
+                    <figcaption>Variadas</figcaption>
+                </figure>
+            </article>
+        </section>
+        <section id="seccion11" class="section">
+            <h2>Sorteo Digital</h2>
+            <ol id="sorteo-digital"></ol>
+            <button id="boton">Sortear</button>
+        </section>
+        <section id="seccion12" class="section">
+            <h2>Galería Responsiva</h2>
+            <div id="galeria">
+                <div id="galeria-slides">
+                    <div id="galeria-slide active">
+                    <img src="https://placeimg.com/400/400/animals" alt="animal">
+                    </div>
+                    <div id="galeria-slide">
+                    <h4>Animal</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis commodi laudantium iste libero deleniti illo accusantium facere alias corporis officia ducimus ratione quam, repellendus molestias, blanditiis reprehenderit provident qui et!</p>
+                    </div>
+                    <div id="galeria-slide">
+                    <img src="https://placeimg.com/400/400/nature" alt="naturaleza">
+                    </div>
+                    <div id="galeria-slide">
+                    <h4>Naturaleza</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis commodi laudantium iste libero deleniti illo accusantium facere alias corporis officia ducimus ratione quam, repellendus molestias, blanditiis reprehenderit provident qui et!</p>
+                    </div>
+                </div>
+                <div class="galeria-botones">
+                    <a class="prev" href="#"> &laquo;</a>
+                    <a class="next" href="#"> &raquo;</a>
+                </div>
+            </div>    
+            <section id="seccion13" class="section">
+                <h2>Validación de Formularios</h2>
+                <form class="contact-form">
+                    <legend>Déjanos un comentario</legend>
+                    <input type="text" name="nombre" placeholder="Nombre" title="Solo se aceptan letras y espacios en blanco." pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
+                    
+                    <input type="email" name="email" placeholder="Email" title="Email inválido" pattern=" ^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$
+                    - Comentarios: ^.{1,255}$" required>
+                    
+                    <input type="text" name="asunto" placeholder="Asunto a tratar" title="El asunto es requerido" required>
+                    
+                    <textarea name="comentario" cols="50" rows="5" placeholder="Escribe tus comentarios" data-pattern="^.{1,255}$" title="Tu coemntario no debe exceder los 255 caracteres" required></textarea>
+
+                    <div class="contact-form-loader">
+                        <img src="./assets/" alt="Cargando">
+                    </div>
+                    
+                    <div class="contact-form-response none">
+                        <p>Los dato han sido enviados</p>
+                    </div>
+                    <input type="submit">
+                </form>
+            </section>
+
+        </section>
+
+    </main>  
+    
+    <button class="dark-mode">🌙</button> 
+    <button class="scroll-top-btn hidden">&#11014;</button>
+    
+    <script src="../dom-ejercicios/js/menu_hamburguesa.js" type="module"></script>
+    <script src="../dom-ejercicios/js/index_dom.js" type="module"></script>
+    <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPqUcswEEluOhaUUyHULRq5Lp98NPChAM&callback=initMap"
+  type="text/javascript"></script> -->
+</body>
+</html>
